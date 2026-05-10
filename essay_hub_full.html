@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O-Level Essay Hub — Discursive & Argumentative</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,900;1,9..144,300;1,9..144,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pptxgenjs/3.12.0/pptxgen.bundle.js"></script>
+<style>
+/* ══════════════════════════════
+   TOKENS
+══════════════════════════════ */
+:root {
+  --ink:    #1a1714;
+  --paper:  #faf8f3;
+  --cream:  #f2ece0;
+  --warm:   #e6ddd0;
+  --border: #d9d0c2;
+  --muted:  #8c8070;
+  --red:    #b83228;
+  --green:  #1d6645;
+  --blue:   #2a4b8a;
+  --gold:   #a07820;
+  --purple: #5a3a8a;
+  --teal:   #1a6b6b;
+  --r:      6px;
+}
+
+/* ══════════════════════════════
+   BASE
+══════════════════════════════ */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:'DM Sans',sans-serif;font-weight:300;
+  font-size:15px;line-height:1.7;
+}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:repeating-linear-gradient(180deg,transparent,transparent 27px,rgba(0,0,0,0.03) 28px);
+}
+
+/* ══════════════════════════════
+   LAYOUT
+══════════════════════════════ */
+.wrap{max-width:880px;margin:0 auto;padding:0 22px 100px;position:relative;z-index:1}
+
+/* ══════════════════════════════
+   NAV
+══════════════════════════════ */
+nav{
+  border-bottom:2px solid var(--ink);
+  display:flex;align-items:stretch;gap:0;
+  overflow-x:auto;-webkit-overflow-scrolling:touch;
+  position:sticky;top:0;background:var(--paper);z-index:100;
+}
+.nav-brand{
+  font-family:'Fraunces',serif;font-weight:900;font-size:17px;
+  padding:16px 22px 16px 0;border-right:2px solid var(--ink);
+  margin-right:0;white-space:nowrap;display:flex;align-items:center;
+  flex-shrink:0;
+}
+.nav-links{display:flex;gap:0;flex-wrap:nowrap}
+.nav-btn{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.8px;
+  text-transform:uppercase;color:var(--muted);padding:0 16px;
+  border:none;background:none;cursor:pointer;white-space:nowrap;
+  border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s;
+}
+.nav-btn:hover{color:var(--ink)}
+.nav-btn.active{color:var(--ink);border-bottom-color:var(--ink)}
+
+/* ══════════════════════════════
+   PAGES
+══════════════════════════════ */
+.page{display:none;padding-top:44px}
+.page.active{display:block;animation:fadeUp .3s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ══════════════════════════════
+   TYPE HELPERS
+══════════════════════════════ */
+.eyebrow{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;
+  text-transform:uppercase;color:var(--red);margin-bottom:12px;
+  display:flex;align-items:center;gap:10px;
+}
+.eyebrow::before{content:'';width:18px;height:1px;background:var(--red)}
+
+h1.hero-title{
+  font-family:'Fraunces',serif;font-weight:900;
+  font-size:clamp(32px,6.5vw,58px);line-height:1.0;
+  letter-spacing:-1.5px;margin-bottom:14px;
+}
+h1.hero-title em{font-style:italic;font-weight:300;color:var(--red)}
+
+h2.sec-title{
+  font-family:'Fraunces',serif;font-weight:600;
+  font-size:clamp(20px,3.5vw,26px);letter-spacing:-0.3px;
+  margin-bottom:8px;line-height:1.25;
+}
+h3.card-title{
+  font-family:'Fraunces',serif;font-weight:600;
+  font-size:16px;margin-bottom:5px;line-height:1.3;
+}
+p.lead{font-size:16px;color:var(--muted);line-height:1.8;max-width:620px;margin-bottom:20px}
+
+/* ══════════════════════════════
+   CARDS
+══════════════════════════════ */
+.card{
+  background:white;border:1.5px solid var(--border);
+  border-radius:var(--r);padding:24px;margin-bottom:16px;
+  box-shadow:2px 2px 0 var(--border);
+}
+.card-lbl{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--muted);margin-bottom:16px;
+  display:flex;align-items:center;gap:10px;
+}
+.card-lbl::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* ══════════════════════════════
+   TAGS / BADGES
+══════════════════════════════ */
+.tag{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;
+  text-transform:uppercase;padding:2px 9px;border-radius:100px;
+  display:inline-block;
+}
+.tag-tech   {background:rgba(184,50,40,0.08);color:var(--red);border:1px solid rgba(184,50,40,0.2)}
+.tag-youth  {background:rgba(42,75,138,0.08);color:var(--blue);border:1px solid rgba(42,75,138,0.2)}
+.tag-society{background:rgba(29,102,69,0.08);color:var(--green);border:1px solid rgba(29,102,69,0.2)}
+.tag-olevel {background:rgba(26,27,26,0.07);color:var(--ink);border:1px solid rgba(26,27,26,0.18)}
+.tag-sample {background:rgba(140,128,112,0.1);color:var(--muted);border:1px solid rgba(140,128,112,0.25)}
+.tag-disc   {background:rgba(29,102,69,0.08);color:var(--green);border:1px solid rgba(29,102,69,0.2)}
+.tag-arg    {background:rgba(42,75,138,0.08);color:var(--blue);border:1px solid rgba(42,75,138,0.2)}
+
+/* ══════════════════════════════
+   BUTTONS
+══════════════════════════════ */
+.btn{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:11px 24px;border-radius:100px;
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;
+  text-transform:uppercase;cursor:pointer;transition:all .18s;border:none;
+}
+.btn-primary{background:var(--ink);color:white;box-shadow:3px 3px 0 var(--border)}
+.btn-primary:hover{background:var(--red);transform:translateY(-1px)}
+.btn-primary:disabled{background:var(--muted);box-shadow:none;cursor:not-allowed;transform:none}
+.btn-outline{background:transparent;color:var(--muted);border:1.5px solid var(--border)}
+.btn-outline:hover{border-color:var(--ink);color:var(--ink)}
+.btn-sm{padding:7px 16px;font-size:9px;letter-spacing:1.5px}
+
+/* ══════════════════════════════
+   DIVIDER
+══════════════════════════════ */
+hr.div{border:none;border-top:1px solid var(--border);margin:36px 0}
+
+/* ══════════════════════════════
+   STATUS
+══════════════════════════════ */
+.status{display:none;padding:13px 16px;border-radius:var(--r);margin-top:12px;font-size:13px;line-height:1.6}
+.status.ok{display:block;background:rgba(29,102,69,0.07);border:1.5px solid rgba(29,102,69,0.25);color:var(--green)}
+.status.err{display:block;background:rgba(184,50,40,0.07);border:1.5px solid rgba(184,50,40,0.25);color:var(--red)}
+
+/* spinner */
+.spin{display:inline-block;width:13px;height:13px;border:2px solid rgba(255,255,255,0.25);border-top-color:white;border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ══════════════════════════════
+   PAGE 1 — HOME
+══════════════════════════════ */
+.hero{padding-bottom:36px;border-bottom:2px solid var(--ink);margin-bottom:36px}
+
+.essay-types-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;
+  margin:20px 0 28px;
+}
+.etype{
+  background:var(--cream);border:1.5px solid var(--border);
+  border-radius:var(--r);padding:16px;
+}
+.etype-name{font-family:'Fraunces',serif;font-weight:600;font-size:15px;margin-bottom:4px}
+.etype-desc{font-size:12px;color:var(--muted);line-height:1.5}
+.etype.focus{border-color:var(--ink);background:white}
+.etype.focus .etype-name{color:var(--ink)}
+.etype.muted-type .etype-name{color:var(--muted)}
+
+.focus-box{
+  background:var(--ink);color:white;border-radius:var(--r);
+  padding:22px 26px;margin-top:28px;
+}
+.focus-box h3{font-family:'Fraunces',serif;font-weight:600;font-size:17px;margin-bottom:8px}
+.focus-box p{font-size:13px;line-height:1.8;color:rgba(255,255,255,0.75);max-width:560px}
+.focus-box strong{color:white}
+
+/* ══════════════════════════════
+   PAGE 2 — QUESTION BANK
+══════════════════════════════ */
+.theme-block{margin-bottom:48px}
+.theme-hdr{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:18px;
+}
+.theme-hdr h2{margin-bottom:0}
+
+.q-item{
+  background:white;border:1.5px solid var(--border);border-radius:var(--r);
+  padding:14px 18px;margin-bottom:9px;
+  display:flex;align-items:flex-start;gap:12px;
+  cursor:pointer;transition:all .18s;
+}
+.q-item:hover{border-color:var(--ink);transform:translateX(3px);box-shadow:3px 3px 0 var(--border)}
+.q-item.selected{border-color:var(--red);background:rgba(184,50,40,0.03)}
+
+.q-yr{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;
+  color:white;background:var(--ink);padding:3px 8px;border-radius:3px;
+  flex-shrink:0;margin-top:3px;white-space:nowrap;
+}
+.q-yr.sample{background:var(--muted)}
+
+.q-body{flex:1}
+.q-text{font-size:13.5px;line-height:1.6;margin-bottom:5px}
+.q-tags{display:flex;gap:6px;flex-wrap:wrap}
+.q-arrow{color:var(--muted);flex-shrink:0;margin-top:4px;font-size:13px}
+
+/* suggest box */
+.suggest-box{
+  background:var(--cream);border:1.5px dashed var(--border);
+  border-radius:var(--r);padding:20px;
+}
+.suggest-box label{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--muted);display:block;margin-bottom:8px;
+}
+.suggest-box textarea{
+  width:100%;background:white;border:1.5px solid var(--border);
+  border-radius:4px;padding:11px 13px;font-family:'DM Sans',sans-serif;
+  font-size:14px;color:var(--ink);resize:vertical;min-height:68px;
+}
+.suggest-box textarea:focus{outline:none;border-color:var(--ink)}
+.suggest-hint{font-size:12px;color:var(--muted);margin-top:6px;font-style:italic}
+
+/* ══════════════════════════════
+   PAGE 3 — CONTENT BANK
+══════════════════════════════ */
+.bank-theme-tabs{
+  display:flex;gap:0;background:var(--cream);
+  border:1.5px solid var(--border);border-radius:var(--r);overflow:hidden;
+  margin-bottom:24px;flex-wrap:wrap;
+}
+.btt{
+  flex:1;min-width:100px;padding:10px 14px;
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--muted);border:none;background:transparent;
+  cursor:pointer;border-right:1px solid var(--border);transition:all .2s;
+  white-space:nowrap;
+}
+.btt:last-child{border-right:none}
+.btt.active{background:var(--ink);color:white}
+.btt:hover:not(.active){background:var(--warm)}
+
+.bank-panel{display:none}
+.bank-panel.active{display:block;animation:fadeUp .25s ease}
+
+.sub-theme-section{margin-bottom:36px}
+.sub-theme-hdr{
+  font-family:'Fraunces',serif;font-weight:600;font-size:17px;
+  padding:10px 0;border-bottom:1.5px solid var(--border);margin-bottom:14px;
+  display:flex;align-items:center;gap:10px;
+}
+.sub-theme-icon{font-size:18px}
+
+.point-card{
+  background:white;border:1.5px solid var(--border);border-radius:var(--r);
+  margin-bottom:10px;overflow:hidden;
+}
+.point-head{
+  display:flex;align-items:flex-start;gap:10px;padding:13px 16px;
+  cursor:pointer;transition:background .15s;
+}
+.point-head:hover{background:var(--cream)}
+.point-side{
+  width:24px;height:24px;border-radius:4px;flex-shrink:0;margin-top:1px;
+  display:flex;align-items:center;justify-content:center;font-size:12px;
+}
+.point-side.for{background:rgba(29,102,69,0.12);color:var(--green)}
+.point-side.against{background:rgba(184,50,40,0.12);color:var(--red)}
+.point-title{font-size:13.5px;font-weight:500;flex:1;line-height:1.5}
+.point-chevron{color:var(--muted);font-size:11px;flex-shrink:0;margin-top:4px;transition:transform .2s}
+.point-card.open .point-chevron{transform:rotate(90deg)}
+.point-body{display:none;padding:0 16px 14px 50px}
+.point-card.open .point-body{display:block}
+.point-body p{font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:8px}
+.point-body strong{color:var(--ink)}
+.point-eg{
+  background:var(--cream);border-left:3px solid var(--border);
+  padding:10px 13px;border-radius:0 4px 4px 0;
+  font-size:12px;color:var(--muted);line-height:1.7;margin-top:6px;
+}
+.point-eg em{color:var(--gold);font-style:normal;font-weight:500}
+
+/* news */
+.news-section{margin-top:8px}
+.news-note{
+  font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);
+  letter-spacing:1px;margin-bottom:14px;display:flex;align-items:center;gap:6px;
+}
+.news-note::before{content:'↻';color:var(--teal)}
+.news-grid{display:flex;flex-direction:column;gap:10px}
+.news-card{
+  background:white;border:1.5px solid var(--border);border-radius:var(--r);
+  padding:14px 16px;transition:border-color .18s;
+}
+.news-card:hover{border-color:var(--teal)}
+.news-meta{
+  font-family:'DM Mono',monospace;font-size:10px;
+  color:var(--teal);letter-spacing:1px;margin-bottom:5px;
+  display:flex;gap:8px;align-items:center;
+}
+.news-src{color:var(--muted)}
+.news-title{font-size:13.5px;font-weight:500;line-height:1.5;margin-bottom:4px}
+.news-snip{font-size:12px;color:var(--muted);line-height:1.65}
+.news-loading{
+  padding:28px;text-align:center;
+  font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:1px;
+}
+.news-loading::after{
+  content:'';display:block;width:22px;height:22px;
+  border:2px solid var(--border);border-top-color:var(--teal);
+  border-radius:50%;margin:12px auto 0;animation:spin .8s linear infinite;
+}
+
+/* ══════════════════════════════
+   PAGE 4 — PLAN
+══════════════════════════════ */
+.sel-q-banner{
+  background:var(--ink);color:white;border-radius:var(--r);
+  padding:20px 24px;margin-bottom:24px;position:relative;
+}
+.sel-q-lbl{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;
+  text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:7px;
+}
+.sel-q-text{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(14px,2.5vw,17px);line-height:1.4}
+.sel-q-type{margin-top:7px;font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,0.5);letter-spacing:1px}
+.change-q{
+  position:absolute;top:16px;right:16px;
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;
+  background:rgba(255,255,255,0.1);color:white;
+  border:1px solid rgba(255,255,255,0.2);padding:5px 12px;border-radius:100px;cursor:pointer;transition:all .18s;
+}
+.change-q:hover{background:rgba(255,255,255,0.2)}
+
+.no-q{
+  background:var(--cream);border:1.5px dashed var(--border);
+  border-radius:var(--r);padding:40px;text-align:center;
+}
+.no-q p{color:var(--muted);font-size:14px;margin-bottom:16px}
+
+/* template */
+.tmpl-section{margin-bottom:20px}
+.tmpl-hdr{
+  display:flex;align-items:center;gap:12px;
+  padding:12px 18px;border:1.5px solid var(--border);
+  border-radius:var(--r) var(--r) 0 0;border-bottom:none;
+}
+.tmpl-letter{
+  width:32px;height:32px;border-radius:4px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Fraunces',serif;font-weight:900;font-size:18px;color:white;
+}
+.tmpl-hdr-info strong{display:block;font-size:13.5px;font-weight:500}
+.tmpl-hdr-info span{font-size:11px;color:var(--muted);font-style:italic}
+[data-sec=intro]  .tmpl-hdr{background:rgba(42,75,138,0.06)}
+[data-sec=intro]  .tmpl-letter{background:var(--blue)}
+[data-sec=for]    .tmpl-hdr{background:rgba(29,102,69,0.06)}
+[data-sec=for]    .tmpl-letter{background:var(--green)}
+[data-sec=against].tmpl-hdr{background:rgba(184,50,40,0.06)}
+[data-sec=against].tmpl-letter{background:var(--red)}
+[data-sec=conc]   .tmpl-hdr{background:rgba(160,120,32,0.06)}
+[data-sec=conc]   .tmpl-letter{background:var(--gold)}
+
+.tmpl-body{border:1.5px solid var(--border);border-radius:0 0 var(--r) var(--r);background:white}
+.field-blk{padding:16px 18px;border-bottom:1px solid var(--border)}
+.field-blk:last-child{border-bottom:none}
+.field-lbl{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--muted);margin-bottom:5px;display:block;
+}
+.field-hint{font-size:12px;color:var(--muted);font-style:italic;margin-bottom:8px;line-height:1.5}
+textarea.ti{
+  width:100%;background:var(--paper);border:1.5px solid var(--border);
+  border-radius:4px;padding:11px 13px;font-family:'DM Sans',sans-serif;
+  font-size:14px;color:var(--ink);resize:vertical;min-height:76px;line-height:1.7;
+  transition:border-color .18s;
+}
+textarea.ti:focus{outline:none;border-color:var(--ink)}
+.wc{text-align:right;font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:4px}
+
+.polish-btn{
+  display:inline-flex;align-items:center;gap:7px;margin-top:10px;
+  padding:8px 16px;background:var(--ink);color:white;border:none;
+  border-radius:100px;font-family:'DM Mono',monospace;font-size:9px;
+  letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .18s;
+}
+.polish-btn:hover{background:var(--red)}
+.polish-btn:disabled{background:var(--muted);cursor:not-allowed}
+
+.polished{
+  display:none;background:rgba(29,102,69,0.05);
+  border:1.5px solid rgba(29,102,69,0.2);border-radius:4px;
+  padding:14px;margin-top:10px;font-size:13.5px;line-height:1.8;font-style:italic;
+}
+.polished.show{display:block;animation:fadeUp .25s ease}
+.pol-lbl{
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--green);margin-bottom:6px;
+}
+.pol-actions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+
+/* export bar */
+.export-bar{
+  background:var(--ink);border-radius:var(--r);padding:18px 22px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:14px;flex-wrap:wrap;margin-top:28px;
+}
+.export-bar p{color:rgba(255,255,255,0.65);font-size:13px}
+.export-btn{
+  padding:10px 22px;background:white;color:var(--ink);border:none;
+  border-radius:100px;font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;
+  transition:all .18s;white-space:nowrap;
+}
+.export-btn:hover{background:var(--gold);color:white}
+
+/* ══════════════════════════════
+   PAGE 5 — SUBMIT
+══════════════════════════════ */
+.meta-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+@media(max-width:480px){.meta-row{grid-template-columns:1fr}}
+.fset{display:flex;flex-direction:column;gap:5px}
+.fset label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
+.fset input{
+  width:100%;background:white;border:1.5px solid var(--border);
+  border-radius:4px;padding:10px 13px;font-family:'DM Sans',sans-serif;
+  font-size:14px;color:var(--ink);transition:border-color .18s;
+}
+.fset input:focus{outline:none;border-color:var(--ink)}
+
+.upload-zone{
+  border:2px dashed var(--border);border-radius:var(--r);
+  padding:48px 28px;text-align:center;background:var(--cream);
+  cursor:pointer;transition:all .2s;margin-bottom:14px;
+}
+.upload-zone:hover,.upload-zone.over{border-color:var(--ink);background:white}
+.upload-zone input{display:none}
+.uz-icon{font-size:34px;margin-bottom:12px}
+.uz-title{font-family:'Fraunces',serif;font-weight:600;font-size:17px;margin-bottom:5px}
+.uz-sub{font-size:13px;color:var(--muted)}
+
+.file-prev{
+  display:none;background:white;border:1.5px solid var(--border);
+  border-radius:var(--r);padding:14px 18px;margin-bottom:14px;
+  flex-direction:column;gap:6px;
+}
+.file-prev.show{display:flex}
+.fp-name{font-weight:500;font-size:14px}
+.fp-meta{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:1px}
+.fp-rm{align-self:flex-start;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--red);background:none;border:none;cursor:pointer;padding:0}
+
+@media(max-width:600px){
+  .export-bar{flex-direction:column;text-align:center}
+  .bank-theme-tabs{flex-direction:column}
+  .btt{border-right:none;border-bottom:1px solid var(--border)}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Essay Hub</div>
+  <div class="nav-links">
+    <button class="nav-btn active" onclick="go('p1',this)">Home</button>
+    <button class="nav-btn" onclick="go('p2',this)">Question Bank</button>
+    <button class="nav-btn" onclick="go('p3',this)">Content Bank</button>
+    <button class="nav-btn" onclick="go('p4',this)">Plan Response</button>
+    <button class="nav-btn" onclick="go('p5',this)">Submit Essay</button>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════
+     PAGE 1 — HOME
+══════════════════════════════════ -->
+<div class="page active" id="p1">
+
+  <div class="hero">
+    <div class="eyebrow">O-Level English · Paper 1</div>
+    <h1 class="hero-title">O-Level<br>Essay <em>Hub</em></h1>
+    <p class="lead">A structured resource for Secondary 3 &amp; 4 students tackling discursive and argumentative essays — the essay types where preparation, evidence, and structure matter most.</p>
+    <button class="btn btn-primary" onclick="go('p2',document.querySelectorAll('.nav-btn')[1])">Browse Question Bank →</button>
+  </div>
+
+  <h2 class="sec-title" style="margin-bottom:14px">Know Your Essay Types</h2>
+  <p style="color:var(--muted);font-size:14px;margin-bottom:16px">O-Level Paper 1 tests five broad essay types. Understanding which type a question belongs to tells you <em>how</em> to structure your answer.</p>
+
+  <div class="essay-types-grid">
+    <div class="etype muted-type">
+      <div class="etype-name">📖 Narrative</div>
+      <div class="etype-desc">Story-telling with a plot arc — beginning, build-up, climax, resolution. Often fictional.</div>
+    </div>
+    <div class="etype muted-type">
+      <div class="etype-name">📝 Personal Recount</div>
+      <div class="etype-desc">A real experience you personally lived through. No strict plot structure needed — reflection matters most.</div>
+    </div>
+    <div class="etype muted-type">
+      <div class="etype-name">🎨 Descriptive</div>
+      <div class="etype-desc">Appeals to the five senses. Describes a person, place, object, or event in vivid detail.</div>
+    </div>
+    <div class="etype focus">
+      <div class="etype-name">⚖️ Discursive</div>
+      <div class="etype-desc">Explores multiple sides of an issue without needing to take a firm stand. Balanced, nuanced tone.</div>
+    </div>
+    <div class="etype focus">
+      <div class="etype-name">🗣️ Argumentative</div>
+      <div class="etype-desc">Takes a clear position and defends it with evidence, logic, and rebuttals of opposing views.</div>
+    </div>
+  </div>
+
+  <div class="focus-box">
+    <h3>Why this site focuses on Discursive &amp; Argumentative essays</h3>
+    <p>Narrative, recount, and descriptive essays draw on <strong>personal experience and creativity</strong> — skills best developed through reading and practice, not a website. Discursive and argumentative essays, however, require <strong>content knowledge, structured argument, and real-world evidence</strong>. That is where preparation pays off, and where this hub helps most. Use the Content Bank to build your evidence base. Use the Planner to structure your argument. The writing itself is always yours.</p>
+  </div>
+
+  <hr class="div">
+
+  <h2 class="sec-title" style="margin-bottom:10px">The 3 Recurring Themes</h2>
+  <p style="color:var(--muted);font-size:14px;margin-bottom:18px">Across O-Level and N-Level papers from 2012–2024, discursive and argumentative questions cluster around three broad themes.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+    <div class="card" style="margin-bottom:0;border-left:4px solid var(--red)">
+      <h3 class="card-title">💻 Technology</h3>
+      <p style="font-size:13px;color:var(--muted);line-height:1.6">Social media, devices in education, digital dangers, modern inventions, screen time, language and smartphones.</p>
+    </div>
+    <div class="card" style="margin-bottom:0;border-left:4px solid var(--blue)">
+      <h3 class="card-title">👥 Youths</h3>
+      <p style="font-size:13px;color:var(--muted);line-height:1.6">Unhealthy lifestyles, celebrity obsession, materialism, changing the world, education and real-world skills.</p>
+    </div>
+    <div class="card" style="margin-bottom:0;border-left:4px solid var(--green)">
+      <h3 class="card-title">🌏 Society &amp; Culture</h3>
+      <p style="font-size:13px;color:var(--muted);line-height:1.6">Elderly, family, fairness, generational differences, Singapore challenges, community and care.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════════
+     PAGE 2 — QUESTION BANK
+══════════════════════════════════ -->
+<div class="page" id="p2">
+
+  <div class="eyebrow">Question Bank</div>
+  <h2 class="sec-title" style="margin-bottom:6px">All Themes &amp; Questions</h2>
+  <p style="color:var(--muted);font-size:14px;margin-bottom:32px">Click any question to open the Response Planner. Questions marked <span class="tag tag-olevel">O/N Level</span> are from past national exams. <span class="tag tag-sample">Practice</span> questions are from class materials.</p>
+
+  <!-- ── THEME 1: TECHNOLOGY ── -->
+  <div class="theme-block">
+    <div class="theme-hdr">
+      <h2 class="sec-title" style="margin-bottom:0">💻 Technology</h2>
+      <span class="tag tag-tech">Tech</span>
+    </div>
+
+    <p style="font-size:13px;color:var(--muted);margin-bottom:14px;font-style:italic">Sub-themes: Social media · Devices &amp; education · Digital dangers · Modern inventions · Smartphones &amp; language</p>
+
+    <!-- O/N Level -->
+    <div class="q-item" onclick="pickQ(this)" data-id="sm-harm" data-type="arg" data-text='"Social media does more harm than good." Do you agree? Why or why not?'>
+      <span class="q-yr">O'2024</span>
+      <div class="q-body"><div class="q-text">"Social media does more harm than good." Do you agree? Why or why not?</div><div class="q-tags"><span class="tag tag-arg">Argumentative</span><span class="tag tag-olevel">O Level</span></div></div>
+      <span class="q-arrow">→</span>
+    </div>
+    <div class="q-item" onclick="pickQ(this)" data-id="advert" data-type="arg" data-text='"People today are far too easily persuaded to spend money on things they don\'t need." Do you agree that advertising has made us wasteful?'>
+      <span class="q-yr">O'2022</span>
+      <div class="q-body"><div class="q-text">"People today are far too easily persuaded to spend money on things they don't need." Do you agree that advertising has made us wasteful?</div><div class="q-tags"><span class="tag tag-arg">Argumentative</span><span class="tag tag-olevel">O Level</span></div></div>
+      <span class="q-arrow">→</span>
+    </div>
+    <div class="q-item" onclick="pickQ(this)" data-id="invention" data-type="disc" data-text="Which modern invention is essential for you and your family and which one could you and your family live without? Explain your views.">
+      <span class="q-yr">O'2018</span>
+      <div class="q-body"><div class="q-text">Which modern invention is essential for you and your family and which one could you and your family live without? Explain your views.</div><div class="q-tags"><span class="tag tag-disc">Discursive</span><span class="tag tag-olevel">O Level</span></div></div>
+      <span class="q-arrow">→</span>
+    </div>
+    <div class="q-item" onclick="pickQ(this)" data-id="devices-study" data-type="arg" data-text="Do electronic devices, such as tablets or smart phones, help or hinder students in their studies?">
+      <span class="q-yr">O'2015</span>
+      <div class="q-body"><div class="q-text">Do electronic devices, such as tablets or smart phones, help or hinder students in their studies?</div><div class="q-tags"><span class="tag tag-arg">Argumentative</span><span class="tag tag-olevel">O Level</span></div></div>
+      <span class="q-arrow">→</span>
+    </div>
+    <div class="q-item" onclick="pickQ(this)" data-id="gadgets-family" data-type="disc" data-text="Some parents say that the teenagers' use of smartphones and electronic gadgets is spoiling family life. What are your views?">
+      <span class="q-yr">N'2016</span>
+      <div class="q-body"><div class="q-text">Some parents say that the teenagers' use of smartphones and electronic gadgets is spoiling family life. What are your views?</div><div class="q-tags"><span class="tag tag-disc">Discursive</span><span class="tag tag-olevel">N Level</span></div></div>
+      <span class="q-arrow">→</span>
+    </div>
+
+    <!-- Practice -->
+    <div class="q-item" onclick="pickQ(this)" data-id="sword" data-type="disc" data-text="Social media is a double-edged sword. Discuss why it is both a curse and a blessing in modern life.">
+      <span class="q-yr sample">Practice</span>
+      <div class="q-body"><div class="q-text">Social media is a double-edged sword. Discuss why it is both a curse and a blessing in modern life.</div><div class="q-tags"><span class="tag tag-disc">Discursive</span><span class="tag tag-sample">Practice</span></div></div>
+      <span class="q-arrow">→</span>
+    </div>
+    <div class="q-item" onclick="pickQ(this)" data-id="closer-apart" data-type="disc" data-text="Technology has made the world closer but further apart. Discuss.">
+      <span class="q-yr sample">Practice</span>
+      <div class="q-body"><div class="q-text">Technology has made the world closer but further apart. Discuss.</div><div class="q-tags"><span class="tag tag-disc">Discursive</span><span class="tag tag-sample">Practice</span></div></div>
+      <span class="q-arrow">→</span>
+    </div>
+    <div class="q-item" onclick="pickQ(this)" data-id="fulfilling" data-type="arg" data-text='"Technology has made our lives more fulfilling." Do you think there are situations in which this might not be true? Explain your views.'>
+      <span class="q-yr sample">Practice</span>
+      <div class="q-body"><div class="q-text">"Technology has made our lives more fulfilling." Do you think there are situations in which this might not be true? Explain your views.</div><div class="q-tags"><span class="tag tag-arg">Argumentative</span><span class="tag tag-sample">Practice</span></div></div>
+      <span class="q-arrow">→</span>
+    </div>
+    <div class="q-item" onclick="pickQ(this)" data-id="tech-dangerous" data-type="arg" data-text='"Modern technology has made today\'s world increasingly dangerous." Do you agree?'>
+      <span class="q-yr sample">Practice</span>
+      <div class="q-body"><div class="q-text">"Modern technology has made today's world increasingly dangerous." Do you agree?</div><div class="q-tags"><span class="tag tag-arg">Argumentative</span><span class="tag tag-sample">Practice</span></div></div>
+      <span class="q-arrow">→</span>
+    </div>
+    <div class="q-item" onclick="pickQ(this)" data-id="smartphones-language" data-type="arg" data-text='"The growing prevalence of smartphones has hindered students\' language capabilities." Do you agree?'>
+      <span class="q-yr sample">Practice</span>
+      <div class="q-body"><div class="q-text">"The growing prevalence of smartphones has hindered students' language capabilities." Do you agree?</div><div class="q-tags"><span class="tag tag-arg">Argumentative</span><span class="tag tag-sample">Practice</span></div></div>
+      <span class="q-arrow">→</span>
+    </div>
+  </div>
+
+  <!-- ── THEME 2: YOUTHS ── -->
+  <div class="theme-block">
+    <div class="theme-hdr">
+      <h2 class="sec-title" style="margin-bottom:0">👥 Youths</h2>
+      <span class="tag tag-youth">Youth</span>
+    </div>
+
+    <p style="font-size:13px;color:var(--muted);margin-bottom:14px;font-style:italic">Sub-themes: Lifestyle &amp; health · Celebrity &amp; fame · Materialism · Education &amp; the real world · Youth as change-makers</p>
+
+    <div class="q-item" onclick="pickQ(this)" data-id="young-world" data-type="arg" data-text='"Youths are changing the world for the better." What are your views?'>
+      <span class="q-yr">O'2021</span>
+      <div class="q-body"><div class="q-text">"Youths are changing the world for the better." What are your views?</div><div class="q-tags"><span class="tag tag-disc">Discursive</span><span class="tag tag-olevel">O Level</span></div></div>
+      <span class="q-arrow">→</span>
+    </div>
+    <div class="q-item" onclick="pickQ(this)" data-id="celebrities" data-type="disc" data-text="Most young people today are obsessed with fame and imitating celebrities. What are your views?">
+      <span class="q-yr">O'2019</span>
+      <div class="q-body"><div class="q-text">Most young people today are obsessed with fame and imitating celebrities. What are your views?</div><div class="q-tags"><span class="tag tag-disc">Discursive</span><span class="tag tag-olevel">O Level</span></div></div>
+      <span class="q-arrow">→</span>
+    </div>
+    <div class="q-item" onclick="pickQ(this)" data-id="unhealthy" data-type="arg" data-text="To what extent do you agree with the idea that some teenagers lead an unhealthy lifestyle? Give reasons for your views.">
+      <span class="q-yr">O'2016</span>
+      <div class="q-body"><div class="q-text">To what extent do you agree with the idea that some teenagers lead an unhealthy lifestyle? Give reasons for your views.</div><div class="q-tags"><span class="tag tag-arg">Argumentative</span><span class="tag tag-olevel">O Level</span></div></div>
+      <span class="q-arrow">→</span>
+    </div>
+    <div class="q-item" onclick="pickQ(this)" data-id="materialism" data-type="disc" data-text="It is often said that people are too concerned with getting things and spending money. What is your opinion?">
+      <span class="q-yr">O'2017</span>
+      <div class="q-body"><div class="q-text">It is often said that people are too concerned with getting things and spending money. What is your opinion?</div><div class="q-tags"><span class="tag tag-disc">Discursive</span><span class="tag tag-olevel">O Level</span></div></div>
+      <span class="q-arrow">→</span>
+    </div>
+    <div class="q-item" onclick="pickQ(this)" data-id="teen-important" data-type="disc" data-text="What are the most important things in the lives of teenagers nowadays?">
+      <span class="q-yr">N'2019</span>
+      <div class="q-body"><div class="q-text">What are the most important things in the lives of teenagers nowadays?</div><div class="q-tags"><span class="tag tag-disc">Discursive</span><span class="tag tag-olevel">N Level</span></div></div>
+      <span class="q-arrow">→</span>
+    </div>
+    <div class="q-item" onclick="pickQ(this)" data-id="edu-realworld" data-type="arg" data-text='"Skills and knowledge acquired in the classroom do not prepare the young for the working world." Do you agree?'>
+      <span class="q-yr sample">Practice</span>
+      <div class="q-body"><div class="q-text">"Skills and knowledge acquired in the classroom do not prepare the young for the working world." Do you agree?</div><div class="q-tags"><span class="tag tag-arg">Argumentative</span><span class="tag tag-sample">Practice</span></div></div>
+      <span class="q-arrow">→</span>
+    </div>
+    <div class="q-item" onclick="pickQ(this)" data-id="practical-skills" data-type="arg" data-text='"Schools should teach practical skills such as cooking and managing our finances." Do you agree? Why or why not?'>
+      <span class="q-yr">O'2023</span>
+      <div class="q-body"><div class="q-text">"Schools should teach practical skills such as cooking and managing our finances." Do you agree? Why or why not?</div><div class="q-tags"><span class="tag tag-arg">Argumentative</span><span class="tag tag-olevel">O Level</span></div></div>
+      <span class="q-arrow">→</span>
+    </div>
+  </div>
+
+  <!-- ── THEME 3: SOCIETY ── -->
+  <div class="theme-block">
+    <div class="theme-hdr">
+      <h2 class="sec-title" style="margin-bottom:0">🌏 Society &amp; Culture</h2>
+      <span class="tag tag-society">Society</span>
+    </div>
+
+    <p style="font-size:13px;color:var(--muted);margin-bottom:14px;font-style:italic">Sub-themes: Elderly &amp; ageing · Family · Fairness &amp; happiness · Generational differences · Singapore challenges · Community</p>
+
+    <div class="q-item" onclick="pickQ(this)" data-id="fairness" data-type="arg" data-text='"People can only be happy if they feel they are treated fairly." Do you agree?'>
+      <span class="q-yr">O'2019</span>
+      <div class="q-body"><div class="q-text">"People can only be happy if they feel they are treated fairly." Do you agree?</div><div class="q-tags"><span class="tag tag-arg">Argumentative</span><span class="tag tag-olevel">O Level</span></div></div>
+      <span class="q-arrow">→</span>
+    </div>
+    <div class="q-item" onclick="pickQ(this)" data-id="generations" data-type="arg" data-text="People of different generations have a lot to learn from each other. How far do you agree?">
+      <span class="q-yr">N'2021</span>
+      <div class="q-body"><div class="q-text">People of different generations have a lot to learn from each other. How far do you agree?</div><div class="q-tags"><span class="tag tag-arg">Argumentative</span><span class="tag tag-olevel">N Level</span></div></div>
+      <span class="q-arrow">→</span>
+    </div>
+    <div class="q-item" onclick="pickQ(this)" data-id="meals-together" data-type="arg" data-text="It is important for families to take meals together. Do you agree?">
+      <span class="q-yr">N'2017</span>
+      <div class="q-body"><div class="q-text">It is important for families to take meals together. Do you agree?</div><div class="q-tags"><span class="tag tag-arg">Argumentative</span><span class="tag tag-olevel">N Level</span></div></div>
+      <span class="q-arrow">→</span>
+    </div>
+    <div class="q-item" onclick="pickQ(this)" data-id="both-work" data-type="disc" data-text="In many homes, both parents go out to work. What are the advantages and disadvantages of this situation for the family?">
+      <span class="q-yr">N'2014</span>
+      <div class="q-body"><div class="q-text">In many homes, both parents go out to work. What are the advantages and disadvantages of this situation for the family?</div><div class="q-tags"><span class="tag tag-disc">Discursive</span><span class="tag tag-olevel">N Level</span></div></div>
+      <span class="q-arrow">→</span>
+    </div>
+    <div class="q-item" onclick="pickQ(this)" data-id="elderly" data-type="disc" data-text="What should the elderly do in Singapore to age actively? Do you feel that society has done enough for them?">
+      <span class="q-yr sample">Practice</span>
+      <div class="q-body"><div class="q-text">What should the elderly do in Singapore to age actively? Do you feel that society has done enough for them?</div><div class="q-tags"><span class="tag tag-disc">Discursive</span><span class="tag tag-sample">Practice</span></div></div>
+      <span class="q-arrow">→</span>
+    </div>
+    <div class="q-item" onclick="pickQ(this)" data-id="vulnerable" data-type="disc" data-text='"One should care about the weakest and most vulnerable members of society." Discuss.'>
+      <span class="q-yr sample">Practice</span>
+      <div class="q-body"><div class="q-text">"One should care about the weakest and most vulnerable members of society." Discuss.</div><div class="q-tags"><span class="tag tag-disc">Discursive</span><span class="tag tag-sample">Practice</span></div></div>
+      <span class="q-arrow">→</span>
+    </div>
+    <div class="q-item" onclick="pickQ(this)" data-id="sg-challenges" data-type="disc" data-text="What are some of the challenges Singapore may face in the next decade?">
+      <span class="q-yr sample">Practice</span>
+      <div class="q-body"><div class="q-text">What are some of the challenges Singapore may face in the next decade?</div><div class="q-tags"><span class="tag tag-disc">Discursive</span><span class="tag tag-sample">Practice</span></div></div>
+      <span class="q-arrow">→</span>
+    </div>
+  </div>
+
+  <hr class="div">
+
+  <!-- SUGGEST A QUESTION -->
+  <div class="suggest-box">
+    <label>💬 Suggest a question to add (optional)</label>
+    <textarea id="suggestInput" placeholder="Found a relevant question from a past paper, school test, or revision material? Share it here — your teacher may add it to the bank."></textarea>
+    <div class="suggest-hint">Not compulsory. Include the source if you know it (e.g. "Zhonghua Sec 4, 2023").</div>
+    <div style="margin-top:12px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+      <button class="btn btn-primary btn-sm" onclick="suggestQ()">Submit Suggestion</button>
+      <span id="suggestStatus" style="font-size:12px;color:var(--green);display:none">✓ Sent to your teacher — thank you!</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════════
+     PAGE 3 — CONTENT BANK
+══════════════════════════════════ -->
+<div class="page" id="p3">
+
+  <div class="eyebrow">Content Bank</div>
+  <h2 class="sec-title" style="margin-bottom:6px">Arguments, Evidence &amp; News</h2>
+  <p style="color:var(--muted);font-size:14px;margin-bottom:24px">Explore curated arguments and real-world examples by theme. The same content can support multiple questions — good essays reuse evidence creatively.</p>
+
+  <div class="bank-theme-tabs">
+    <button class="btt active" onclick="switchBank('tech',this)">💻 Technology</button>
+    <button class="btt" onclick="switchBank('youth',this)">👥 Youths</button>
+    <button class="btt" onclick="switchBank('society',this)">🌏 Society</button>
+  </div>
+
+  <!-- TECH BANK -->
+  <div class="bank-panel active" id="bank-tech">
+
+    <div class="sub-theme-section">
+      <div class="sub-theme-hdr"><span class="sub-theme-icon">📱</span>Social Media</div>
+      <div class="point-card" onclick="togglePt(this)">
+        <div class="point-head"><div class="point-side for">✦</div><div class="point-title">Overcomes geographical boundaries — instant global connection</div><div class="point-chevron">▶</div></div>
+        <div class="point-body"><p>Before social media, staying in touch across countries required letters or costly calls. Platforms allow people to update friends and family in real time, anywhere in the world.</p><div class="point-eg"><em>Example:</em> A Singapore student abroad can share milestones instantly. Small businesses use Instagram to reach global audiences without expensive advertising. Singapore's crowdfunding campaigns on social media raised <strong>S$2.9 million in 10 days</strong> to fund life-saving treatment for a baby.</div></div>
+      </div>
+      <div class="point-card" onclick="togglePt(this)">
+        <div class="point-head"><div class="point-side for">✦</div><div class="point-title">Vehicle for social movements and civic engagement</div><div class="point-chevron">▶</div></div>
+        <div class="point-body"><p>Social media gives ordinary citizens a platform to organise and advocate for change, circumventing traditional gatekeepers like newspapers.</p><div class="point-eg"><em>Examples:</em> The #MeToo movement went global via Twitter. Greta Thunberg's #FridaysForFuture mobilised millions of young climate activists. Change.org petitions have successfully reversed government decisions.</div></div>
+      </div>
+      <div class="point-card" onclick="togglePt(this)">
+        <div class="point-head"><div class="point-side against">✗</div><div class="point-title">Proliferation of fake news — misinformation spreads faster than truth</div><div class="point-chevron">▶</div></div>
+        <div class="point-body"><p>Studies show misinformation spreads <strong>six times faster</strong> than accurate news on social media platforms, with serious consequences for public health and democratic discourse.</p><div class="point-eg"><em>Example:</em> During COVID-19, vaccine misinformation on Facebook and WhatsApp drove vaccine hesitancy globally. The WHO declared a parallel "infodemic." Singapore enacted <strong>POFMA (Protection from Online Falsehoods and Manipulation Act)</strong> specifically to address this.</div></div>
+      </div>
+      <div class="point-card" onclick="togglePt(this)">
+        <div class="point-head"><div class="point-side against">✗</div><div class="point-title">Mental health crisis — toxic body image and social comparison</div><div class="point-chevron">▶</div></div>
+        <div class="point-body"><p>Platforms flood feeds with curated, filtered images setting unrealistic beauty standards — particularly harming teenagers' self-perception and mental health.</p><div class="point-eg"><em>Example:</em> Meta's own leaked internal research (2021) found Instagram worsened body image issues for <strong>1 in 3 teenage girls</strong>. By 2024, Australia passed laws banning children under 16 from social media platforms — the first country to do so.</div></div>
+      </div>
+      <div class="point-card" onclick="togglePt(this)">
+        <div class="point-head"><div class="point-side against">✗</div><div class="point-title">Cyberbullying — anonymity enables abuse</div><div class="point-chevron">▶</div></div>
+        <div class="point-body"><p>Anonymity emboldens people to send hateful messages they would never say face-to-face. Victims — especially teenagers — suffer real psychological harm.</p><div class="point-eg"><em>Example:</em> The rise of "keyboard warriors" sending hate to strangers or classmates. Because online identities can be hidden, perpetrators often face no social consequences — making the behaviour self-reinforcing.</div></div>
+      </div>
+    </div>
+
+    <div class="sub-theme-section">
+      <div class="sub-theme-hdr"><span class="sub-theme-icon">💻</span>Devices &amp; Education</div>
+      <div class="point-card" onclick="togglePt(this)">
+        <div class="point-head"><div class="point-side for">✦</div><div class="point-title">Unlimited access to information — on-demand, self-directed learning</div><div class="point-chevron">▶</div></div>
+        <div class="point-body"><p>Students no longer need to rely solely on teachers or textbooks. Search engines and AI tools allow immediate doubt-clearing at any time of day.</p><div class="point-eg"><em>Example:</em> Apps like <strong>Snapask</strong> provide 24/7 homework help. Khan Academy offers free world-class lessons. During Singapore's Home-Based Learning (HBL) during COVID-19, devices were the only link to education for millions of students.</div></div>
+      </div>
+      <div class="point-card" onclick="togglePt(this)">
+        <div class="point-head"><div class="point-side for">✦</div><div class="point-title">Diverse, interactive learning modes — catering to different learners</div><div class="point-chevron">▶</div></div>
+        <div class="point-body"><p>Digital tools cater to visual, auditory, and kinesthetic learners through videos, gamified quizzes, and simulations that static textbooks cannot offer.</p><div class="point-eg"><em>Example:</em> <strong>Kahoot</strong> and <strong>Quizlet</strong> gamify revision, improving retention. Shy students who rarely speak up in class often engage more actively on Zoom or online discussion boards — the safety of the screen lowers social anxiety barriers.</div></div>
+      </div>
+      <div class="point-card" onclick="togglePt(this)">
+        <div class="point-head"><div class="point-side against">✗</div><div class="point-title">Addiction to games and entertainment — competing with learning</div><div class="point-chevron">▶</div></div>
+        <div class="point-body"><p>The same device used for studying is a gateway to TikTok, Netflix, and mobile gaming — all designed with addictive feedback loops that students struggle to resist.</p><div class="point-eg"><em>Example:</em> Singapore's <strong>DigitalMindset</strong> team reported <strong>90 cases</strong> of excessive device use in 2019 — a <strong>threefold increase from 2015</strong>. China responded by legally restricting children under 18 to just <strong>1 hour of gaming per week</strong> (Friday to Sunday, 8–9pm only).</div></div>
+      </div>
+      <div class="point-card" onclick="togglePt(this)">
+        <div class="point-head"><div class="point-side against">✗</div><div class="point-title">Academic dishonesty — plagiarism and over-reliance on AI</div><div class="point-chevron">▶</div></div>
+        <div class="point-body"><p>Easy internet access, and now AI writing tools, have made cheating trivially easy — and harder to detect — depriving students of genuine learning.</p><div class="point-eg"><em>Example:</em> ChatGPT can generate a full essay in seconds. Schools globally are struggling to distinguish AI-written work from student work. Students who outsource thinking to AI miss the cognitive development that writing an essay is meant to build.</div></div>
+      </div>
+    </div>
+
+    <div class="sub-theme-section">
+      <div class="sub-theme-hdr"><span class="sub-theme-icon">🌐</span>Technology &amp; Society</div>
+      <div class="point-card" onclick="togglePt(this)">
+        <div class="point-head"><div class="point-side for">✦</div><div class="point-title">Technology improves quality of life — healthcare, convenience, access</div><div class="point-chevron">▶</div></div>
+        <div class="point-body"><p>From telemedicine to food delivery to digital banking, technology has made everyday life significantly more convenient for most people.</p><div class="point-eg"><em>Example:</em> Telemedicine apps allow patients to consult doctors without leaving home. PayNow enables instant, free fund transfers. Google Maps has made getting lost nearly impossible.</div></div>
+      </div>
+      <div class="point-card" onclick="togglePt(this)">
+        <div class="point-head"><div class="point-side against">✗</div><div class="point-title">Digital divide — the elderly and low-income are left behind</div><div class="point-chevron">▶</div></div>
+        <div class="point-body"><p>Singapore's rapid digital transformation assumes access to smartphones and digital literacy — both of which many elderly and lower-income residents lack.</p><div class="point-eg"><em>Example:</em> Older Singaporeans who cannot use PayNow or e-payment systems are excluded from increasingly cashless businesses. Government services moving online disadvantage those without internet access or digital skills — making their lives <strong>harder</strong>, not more fulfilling.</div></div>
+      </div>
+      <div class="point-card" onclick="togglePt(this)">
+        <div class="point-head"><div class="point-side against">✗</div><div class="point-title">Automation displaces workers — especially older, lower-skilled employees</div><div class="point-chevron">▶</div></div>
+        <div class="point-body"><p>While technology creates new jobs, it destroys existing ones faster than workers can reskill — and the new jobs require digital competencies inaccessible to many.</p><div class="point-eg"><em>Example:</em> Self-checkout machines have reduced cashier roles. Customer service chatbots have replaced call centre operators. Workers retrenched at age 50+ often lack the digital skills to re-enter the workforce competitively.</div></div>
+      </div>
+    </div>
+
+    <div class="news-section">
+      <div class="sub-theme-hdr"><span class="sub-theme-icon">⚡</span>Latest News — Technology</div>
+      <div class="news-note">Articles sourced from BBC, CNA, Straits Times, SCMP · Refreshes on demand</div>
+      <div id="news-tech"><div class="news-loading">Loading articles…</div></div>
+      <div style="margin-top:12px;text-align:right">
+        <button class="btn btn-outline btn-sm" onclick="fetchNews('tech')">↻ Refresh</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- YOUTH BANK -->
+  <div class="bank-panel" id="bank-youth">
+
+    <div class="sub-theme-section">
+      <div class="sub-theme-hdr"><span class="sub-theme-icon">🏃</span>Lifestyle &amp; Health</div>
+      <div class="point-card" onclick="togglePt(this)">
+        <div class="point-head"><div class="point-side against">✗</div><div class="point-title">Teenagers today lead increasingly sedentary, screen-dependent lifestyles</div><div class="point-chevron">▶</div></div>
+        <div class="point-body"><p>The rise of smartphones, streaming, and gaming means teenagers spend significantly more time sitting indoors than any previous generation.</p><div class="point-eg"><em>Example:</em> The WHO recommends no more than 2 hours of screen time per day for adolescents; most exceed this several times over. Singapore's National Youth Council surveys consistently show declining physical activity among teens. Obesity rates among Singapore's Primary 1 cohort have risen alongside screen time data.</div></div>
+      </div>
+      <div class="point-card" onclick="togglePt(this)">
+        <div class="point-head"><div class="point-side for">✦</div><div class="point-title">Youth mental health awareness has never been higher</div><div class="point-chevron">▶</div></div>
+        <div class="point-body"><p>Today's teenagers are more emotionally literate and open to discussing mental health than any previous generation — driven partly by social media campaigns and greater access to information.</p><div class="point-eg"><em>Example:</em> Singapore's <strong>Community Health Assessment Team (CHAT)</strong> saw a significant increase in young people voluntarily seeking mental health support. Awareness campaigns like #MindMatters have reduced stigma meaningfully.</div></div>
+      </div>
+    </div>
+
+    <div class="sub-theme-section">
+      <div class="sub-theme-hdr"><span class="sub-theme-icon">⭐</span>Celebrity &amp; Fame</div>
+      <div class="point-card" onclick="togglePt(this)">
+        <div class="point-head"><div class="point-side against">✗</div><div class="point-title">Celebrity culture promotes unrealistic lifestyles and materialism</div><div class="point-chevron">▶</div></div>
+        <div class="point-body"><p>Social media has made celebrity culture inescapable — and the lifestyles it promotes are financially and psychologically out of reach for most teenagers.</p><div class="point-eg"><em>Example:</em> TikTok influencers promoting luxury goods to teenage audiences who cannot afford them fuels impulse spending and dissatisfaction. "FOMO" (fear of missing out) is now a clinically recognised source of adolescent anxiety.</div></div>
+      </div>
+      <div class="point-card" onclick="togglePt(this)">
+        <div class="point-head"><div class="point-side for">✦</div><div class="point-title">Some celebrities use their platform for genuine social good</div><div class="point-chevron">▶</div></div>
+        <div class="point-body"><p>Not all celebrity influence is shallow — some public figures use their reach to champion important causes and inspire young people toward meaningful action.</p><div class="point-eg"><em>Example:</em> Greta Thunberg mobilised millions of young people globally on climate action. Local social media figures have raised funds for charities and promoted mental health awareness to audiences traditional campaigns couldn't reach.</div></div>
+      </div>
+    </div>
+
+    <div class="sub-theme-section">
+      <div class="sub-theme-hdr"><span class="sub-theme-icon">🎓</span>Education &amp; the Real World</div>
+      <div class="point-card" onclick="togglePt(this)">
+        <div class="point-head"><div class="point-side against">✗</div><div class="point-title">Classroom education lags behind the skills the economy actually needs</div><div class="point-chevron">▶</div></div>
+        <div class="point-body"><p>Many students graduate without the communication, financial literacy, or critical thinking skills employers consistently say they lack.</p><div class="point-eg"><em>Example:</em> Singapore's SkillsFuture initiative was created precisely because employers flagged a mismatch between graduate skills and workplace needs. Basic tasks like filing taxes, managing a budget, or writing a professional email are rarely taught in school.</div></div>
+      </div>
+      <div class="point-card" onclick="togglePt(this)">
+        <div class="point-head"><div class="point-side for">✦</div><div class="point-title">Youths today are more globally aware and civically engaged than before</div><div class="point-chevron">▶</div></div>
+        <div class="point-body"><p>Compared to previous generations, today's youth are more informed about global issues and more willing to take action — from climate activism to volunteering.</p><div class="point-eg"><em>Example:</em> Singapore's youth volunteer rates are among the highest in Asia. Youth-led social enterprises are growing. The global school climate strike movement was entirely organised by teenagers.</div></div>
+      </div>
+    </div>
+
+    <div class="news-section">
+      <div class="sub-theme-hdr"><span class="sub-theme-icon">⚡</span>Latest News — Youths</div>
+      <div class="news-note">Articles sourced from BBC, CNA, Straits Times, SCMP · Refreshes on demand</div>
+      <div id="news-youth"><div class="news-loading">Loading articles…</div></div>
+      <div style="margin-top:12px;text-align:right">
+        <button class="btn btn-outline btn-sm" onclick="fetchNews('youth')">↻ Refresh</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOCIETY BANK -->
+  <div class="bank-panel" id="bank-society">
+
+    <div class="sub-theme-section">
+      <div class="sub-theme-hdr"><span class="sub-theme-icon">👴</span>Elderly &amp; Ageing</div>
+      <div class="point-card" onclick="togglePt(this)">
+        <div class="point-head"><div class="point-side against">✗</div><div class="point-title">Singapore's rapidly ageing population poses significant economic and social challenges</div><div class="point-chevron">▶</div></div>
+        <div class="point-body"><p>By 2030, 1 in 4 Singaporeans will be aged 65 or above — placing enormous pressure on healthcare, social support systems, and the working-age population.</p><div class="point-eg"><em>Example:</em> Singapore's <strong>Action Plan for Successful Ageing</strong> was launched to address the gap. The demand for eldercare workers far outpaces supply. Families increasingly face the "sandwich generation" problem — caring for both children and elderly parents simultaneously.</div></div>
+      </div>
+      <div class="point-card" onclick="togglePt(this)">
+        <div class="point-head"><div class="point-side for">✦</div><div class="point-title">The elderly have wisdom, experience, and social capital to contribute</div><div class="point-chevron">▶</div></div>
+        <div class="point-body"><p>Older generations have lived experience that younger people lack — and societies that engage them productively benefit from this accumulated knowledge.</p><div class="point-eg"><em>Example:</em> Singapore's <strong>Senior Employment Credit</strong> incentivises companies to hire older workers. Mentorship programmes pairing retirees with young entrepreneurs have produced successful outcomes in both directions.</div></div>
+      </div>
+    </div>
+
+    <div class="sub-theme-section">
+      <div class="sub-theme-hdr"><span class="sub-theme-icon">👨‍👩‍👧</span>Family &amp; Community</div>
+      <div class="point-card" onclick="togglePt(this)">
+        <div class="point-head"><div class="point-side for">✦</div><div class="point-title">Family meals strengthen bonds and build communication habits</div><div class="point-chevron">▶</div></div>
+        <div class="point-body"><p>Research consistently links regular family meals to better academic performance, lower rates of substance abuse, and stronger family cohesion in children and teenagers.</p><div class="point-eg"><em>Example:</em> A Harvard study found that family dinners were the single strongest predictor of children's academic and emotional wellbeing — more than after-school activities or homework time.</div></div>
+      </div>
+      <div class="point-card" onclick="togglePt(this)">
+        <div class="point-head"><div class="point-side against">✗</div><div class="point-title">Modern work demands make regular family meals increasingly difficult</div><div class="point-chevron">▶</div></div>
+        <div class="point-body"><p>Long working hours, shift work, and the gig economy mean that synchronising family schedules for regular shared meals is becoming a luxury rather than a norm.</p><div class="point-eg"><em>Example:</em> Singapore consistently ranks among the countries with the longest working hours globally. With both parents working full-time and children in after-school activities, shared dinners may realistically only happen on weekends.</div></div>
+      </div>
+    </div>
+
+    <div class="sub-theme-section">
+      <div class="sub-theme-hdr"><span class="sub-theme-icon">⚖️</span>Fairness &amp; Happiness</div>
+      <div class="point-card" onclick="togglePt(this)">
+        <div class="point-head"><div class="point-side for">✦</div><div class="point-title">Fairness is fundamental to social trust and cohesion</div><div class="point-chevron">▶</div></div>
+        <div class="point-body"><p>Societies where people perceive the system as fair — in law, opportunity, and treatment — show higher civic participation, lower crime rates, and greater wellbeing.</p><div class="point-eg"><em>Example:</em> Singapore's meritocracy model is built on the premise that fair opportunity, regardless of race or background, produces social harmony. The CPF system, public housing, and subsidised education are designed to create perceived fairness across income groups.</div></div>
+      </div>
+      <div class="point-card" onclick="togglePt(this)">
+        <div class="point-head"><div class="point-side against">✗</div><div class="point-title">Happiness depends on more than fairness — meaning, relationships, and health matter equally</div><div class="point-chevron">▶</div></div>
+        <div class="point-body"><p>Positive psychology research shows that human happiness is determined by a complex interplay of factors — fairness is one, but purpose, connection, and autonomy are equally important.</p><div class="point-eg"><em>Example:</em> Bhutan measures "Gross National Happiness" rather than GDP — prioritising spiritual wellbeing, community strength, and environmental health over economic fairness alone. Studies show lottery winners return to their baseline happiness within a year, suggesting happiness is not purely circumstantial.</div></div>
+      </div>
+    </div>
+
+    <div class="news-section">
+      <div class="sub-theme-hdr"><span class="sub-theme-icon">⚡</span>Latest News — Society &amp; Culture</div>
+      <div class="news-note">Articles sourced from BBC, CNA, Straits Times, SCMP · Refreshes on demand</div>
+      <div id="news-society"><div class="news-loading">Loading articles…</div></div>
+      <div style="margin-top:12px;text-align:right">
+        <button class="btn btn-outline btn-sm" onclick="fetchNews('society')">↻ Refresh</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════════
+     PAGE 4 — PLAN RESPONSE
+══════════════════════════════════ -->
+<div class="page" id="p4">
+
+  <div class="eyebrow">Response Planner</div>
+  <h2 class="sec-title" style="margin-bottom:6px">Plan Your Response</h2>
+  <p style="color:var(--muted);font-size:14px;margin-bottom:22px">Fill in your <em>own ideas</em> in each box. Hit <strong>✦ Polish</strong> for phrasing suggestions — the content and argument always stay yours.</p>
+
+  <div id="selBanner" class="sel-q-banner" style="display:none">
+    <div class="sel-q-lbl">Selected Question</div>
+    <div class="sel-q-text" id="selQText"></div>
+    <div class="sel-q-type" id="selQType"></div>
+    <button class="change-q" onclick="go('p2',document.querySelectorAll('.nav-btn')[1])">Change →</button>
+  </div>
+  <div id="noQ" class="no-q">
+    <p>No question selected yet. Pick one from the Question Bank first.</p>
+    <button class="btn btn-primary" onclick="go('p2',document.querySelectorAll('.nav-btn')[1])">Browse Questions →</button>
+  </div>
+
+  <div id="tmplArea"></div>
+
+  <div class="export-bar" id="exportBar" style="display:none">
+    <p>Submit your plan to your teacher, or export it as a PowerPoint to keep.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="export-btn" onclick="exportPlan()">✉ Submit to Teacher</button>
+      <button class="export-btn" style="background:var(--gold);color:white" onclick="exportPPT()">⬇ Export as PPT</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════════
+     PAGE 5 — SUBMIT
+══════════════════════════════════ -->
+<div class="page" id="p5">
+
+  <div class="eyebrow">Submit to Teacher</div>
+  <h2 class="sec-title" style="margin-bottom:6px">Upload Your Written Essay</h2>
+  <p style="color:var(--muted);font-size:14px;margin-bottom:26px">Written your full essay? Upload it here for marking. Accepted: PDF, Word (.docx), plain text.</p>
+
+  <div class="fset" style="margin-bottom:14px">
+    <label>Your Name</label><input type="text" id="uName" placeholder="e.g. Tan Wei Ming">
+  </div>
+  <div class="fset" style="margin-bottom:14px">
+    <label>Question Attempted</label>
+    <input type="text" id="uQ" placeholder="Paste the question you wrote on…">
+  </div>
+
+  <div class="upload-zone" id="uploadZone" onclick="document.getElementById('fileIn').click()" ondragover="dOver(event)" ondragleave="dLeave(event)" ondrop="dDrop(event)">
+    <input type="file" id="fileIn" accept=".pdf,.docx,.doc,.txt" onchange="setFile(event.target.files[0])">
+    <div class="uz-icon">📄</div>
+    <div class="uz-title">Click to upload or drag &amp; drop</div>
+    <div class="uz-sub">PDF · Word (.docx) · Plain text · Max 10MB</div>
+  </div>
+
+  <div class="file-prev" id="filePrev">
+    <div class="fp-name" id="fpName"></div>
+    <div class="fp-meta" id="fpMeta"></div>
+    <button class="fp-rm" onclick="rmFile()">✕ Remove</button>
+  </div>
+
+  <button class="btn btn-primary" id="subBtn" onclick="submitEssay()" style="width:100%">Submit Essay to Teacher</button>
+  <div class="status" id="subStatus"></div>
+
+  <hr class="div">
+  <p style="font-size:13px;color:var(--muted);line-height:1.7"><strong style="color:var(--ink)">Note:</strong> Your file is sent directly to your teacher via Google Apps Script and will not be shared with anyone else.</p>
+
+</div>
+
+</div><!-- /wrap -->
+
+<script>
+// ══════════════════════════════
+// CONFIG
+// ══════════════════════════════
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyuA9DdUbfNEY4vnG-1mK-Veh4gnUz5P822GdXy5ahw2wax6csq99yx-PCOh2QXCGO-/exec';
+
+// ══════════════════════════════
+// STATE
+// ══════════════════════════════
+let activeQ  = null;
+let upFile   = null;
+let newsCache = {};
+
+// ══════════════════════════════
+// NAV
+// ══════════════════════════════
+function go(pid, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(pid).classList.add('active');
+  if (btn) btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+
+  // auto-load news when content bank first opened
+  if (pid === 'p3') {
+    const active = document.querySelector('.bank-panel.active');
+    const theme  = active?.id?.replace('bank-','');
+    if (theme) fetchNews(theme);
+  }
+}
+
+// ══════════════════════════════
+// QUESTION PICK
+// ══════════════════════════════
+function pickQ(el) {
+  document.querySelectorAll('.q-item').forEach(i => i.classList.remove('selected'));
+  el.classList.add('selected');
+  activeQ = { id: el.dataset.id, type: el.dataset.type, text: el.dataset.text };
+  buildTemplate();
+  go('p4', document.querySelectorAll('.nav-btn')[3]);
+}
+
+// ══════════════════════════════
+// CONTENT BANK TABS
+// ══════════════════════════════
+function switchBank(theme, btn) {
+  document.querySelectorAll('.btt').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.bank-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('bank-'+theme).classList.add('active');
+  fetchNews(theme);
+}
+
+// ══════════════════════════════
+// POINT TOGGLE
+// ══════════════════════════════
+function togglePt(el) {
+  el.classList.toggle('open');
+  el.querySelector('.point-body').style.display = el.classList.contains('open') ? 'block' : 'none';
+}
+
+// ══════════════════════════════
+// NEWS FETCH
+// ══════════════════════════════
+const NEWS_QUERIES = {
+  tech:    'technology social media Singapore students education digital 2024 2025',
+  youth:   'youth teenagers Singapore mental health education lifestyle 2024 2025',
+  society: 'Singapore elderly family society challenges community 2024 2025'
+};
+
+async function fetchNews(theme) {
+  if (newsCache[theme]) { renderNews(theme, newsCache[theme]); return; }
+
+  const container = document.getElementById('news-'+theme);
+  if (!container) return;
+  container.innerHTML = '<div class="news-loading">Fetching articles…</div>';
+
+  const prompt = `You are a research assistant for a Singapore secondary school English teacher.
+
+Find 5 recent, relevant news articles (2022–2025) for this essay theme: "${NEWS_QUERIES[theme]}"
+
+Focus on: Straits Times, CNA, BBC, SCMP, The Economist, Guardian. Prioritise Singapore/Asia context.
+
+Return ONLY a JSON array, no markdown, no preamble:
+[{"title":"...","source":"CNA","year":"2024","snippet":"2–3 sentence summary relevant to essay arguments","url":"https://... or empty string","angle":"pro or con or neutral"}]`;
+
+  try {
+    const res  = await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,messages:[{role:'user',content:prompt}]})});
+    const data = await res.json();
+    const raw  = data.content.map(b=>b.text||'').join('').replace(/```json|```/g,'').trim();
+    const arts = JSON.parse(raw);
+    newsCache[theme] = arts;
+    renderNews(theme, arts);
+  } catch(e) {
+    container.innerHTML = `<div style="color:var(--muted);font-size:13px;padding:16px;line-height:1.7">Could not load articles. <button class="btn btn-outline btn-sm" onclick="fetchNews('${theme}')">Try again</button></div>`;
+  }
+}
+
+function renderNews(theme, arts) {
+  const c = document.getElementById('news-'+theme);
+  if (!c) return;
+  const angleCol = {pro:' color:var(--green)',con:' color:var(--red)',neutral:'color:var(--muted)'};
+  const angleLabel= {pro:'↑ Supports',con:'↓ Challenges',neutral:'→ Context'};
+  c.innerHTML = `<div class="news-grid">${arts.map(a=>`
+    <div class="news-card">
+      <div class="news-meta">
+        <span>${a.year}</span><span class="news-src">· ${a.source}</span>
+        <span style="margin-left:auto;font-size:9px;${angleCol[a.angle]||''}">${angleLabel[a.angle]||''}</span>
+      </div>
+      <div class="news-title">${a.title}</div>
+      <div class="news-snip">${a.snippet}</div>
+      ${a.url?`<a href="${a.url}" target="_blank" rel="noopener" style="font-family:'DM Mono',monospace;font-size:10px;color:var(--teal);margin-top:6px;display:inline-block;letter-spacing:1px">Read more →</a>`:''}
+    </div>`).join('')}
+  </div>`;
+}
+
+// ══════════════════════════════
+// TEMPLATE
+// ══════════════════════════════
+const TYPE_LABELS = {
+  arg:  'Argumentative — take a clear stance',
+  disc: 'Discursive — explore both sides'
+};
+
+const SECTIONS = {
+  intro: {
+    letter:'I', label:'Introduction', color:'var(--blue)',
+    hint:'Set the scene and state your position.',
+    fields:[
+      {id:'hook',   label:'Hook / Opening Line',   hint:'1–2 sentences to grab attention. A surprising statistic, a vivid scenario, or a bold statement.',  ph:'"There are now more smartphones than people on Earth — yet loneliness rates have never been higher."', rows:3},
+      {id:'define', label:'Define Key Terms',       hint:'Optional but useful — define the central concept in 1 sentence to frame your essay sharply.',       ph:'e.g. Social media refers to web-based platforms that enable users to create, share, and consume content in real time.',  rows:2},
+      {id:'stance', label:'Your Thesis / Stance',  hint:'What is your overall argument? One direct sentence. Even for discursive essays, signal which side you lean toward.', ph:'e.g. While technology has improved convenience, its unchecked use poses serious risks to young people\'s wellbeing and academic performance.', rows:2},
+    ]
+  },
+  for: {
+    letter:'F', label:'For / Benefits', color:'var(--green)',
+    hint:'Your strongest point supporting the positive side.',
+    fields:[
+      {id:'for-p',  label:'Point',                 hint:'State your argument in one sentence.',                                        ph:'e.g. Electronic devices give students access to a vast reservoir of information, enabling self-directed learning beyond the classroom.', rows:2},
+      {id:'for-e',  label:'Evidence / Example',    hint:'A specific statistic, named policy, real news event, or Singapore example.',  ph:'e.g. Singapore\'s DigitalMindset programme, apps like Snapask, and the HBL programme during COVID-19 all demonstrate how devices have become essential learning infrastructure.', rows:3},
+      {id:'for-el', label:'Elaboration (So What?)',hint:'Explain WHY this evidence proves your point. Connect the dots.',             ph:'e.g. This demonstrates that students who lack device access are disadvantaged in ways that compound over time — making digital access not a luxury, but a learning right.', rows:3},
+    ]
+  },
+  against: {
+    letter:'A', label:'Against / Drawbacks', color:'var(--red)',
+    hint:'Your strongest point on the negative side.',
+    fields:[
+      {id:'ag-p',   label:'Counter-Point',         hint:'State the opposing argument clearly in one sentence.',                       ph:'e.g. However, the same devices that facilitate learning are also gateways to addictive content that competes directly with academic focus.', rows:2},
+      {id:'ag-e',   label:'Evidence / Example',    hint:'A different, specific example — ideally from a different context.',          ph:'e.g. Singapore\'s DigitalMindset team reported 90 cases of excessive device use in 2019 — a threefold increase from 2015. China legally restricted gaming for under-18s to 1 hour per week.', rows:3},
+      {id:'ag-el',  label:'Elaboration (So What?)',hint:'Why is this a serious problem? What are the downstream consequences?',      ph:'e.g. Because platforms deploy algorithms designed to maximise time-on-screen, students lack the tools to self-regulate — leading to sleep deprivation, distraction, and falling grades.', rows:3},
+    ]
+  },
+  conc: {
+    letter:'C', label:'Conclusion', color:'var(--gold)',
+    hint:'Tie it together. Don\'t just summarise — leave the reader thinking.',
+    fields:[
+      {id:'c-bal',  label:'Acknowledge Complexity', hint:'1–2 sentences recognising the issue is genuinely two-sided.',              ph:'e.g. Technology is, as many have noted, a double-edged sword — its impact depends entirely on how, and by whom, it is wielded.', rows:2},
+      {id:'c-fin',  label:'Final Stance + Call to Action',hint:'What should we do? Who is responsible — individuals, schools, government?', ph:'e.g. Rather than treating technology as inherently good or bad, governments and educators must invest in digital literacy programmes that equip students to use these tools with wisdom and restraint.', rows:3},
+      {id:'c-clin', label:'Closing Line / Clincher',hint:'A memorable final line. Echo your hook, pose a rhetorical question, or end on a vivid image.', ph:'e.g. After all, a knife can nourish or harm — it is the hand that holds it that determines which.', rows:2},
+    ]
+  }
+};
+
+function buildTemplate() {
+  if (!activeQ) return;
+
+  document.getElementById('selBanner').style.display = 'block';
+  document.getElementById('noQ').style.display = 'none';
+  document.getElementById('selQText').textContent = activeQ.text;
+  document.getElementById('selQType').textContent = TYPE_LABELS[activeQ.type] || activeQ.type;
+  document.getElementById('exportBar').style.display = 'flex';
+
+  const area = document.getElementById('tmplArea');
+  area.innerHTML = ['intro','for','against','conc'].map(sec => {
+    const m = SECTIONS[sec];
+    return `<div class="tmpl-section" data-sec="${sec}">
+      <div class="tmpl-hdr">
+        <div class="tmpl-letter" style="background:${m.color}">${m.letter}</div>
+        <div class="tmpl-hdr-info"><strong>${m.label}</strong><span>${m.hint}</span></div>
+      </div>
+      <div class="tmpl-body">
+        ${m.fields.map(f=>`
+          <div class="field-blk">
+            <label class="field-lbl">${f.label}</label>
+            <div class="field-hint">${f.hint}</div>
+            <textarea class="ti" id="f-${f.id}" rows="${f.rows}" placeholder="${f.ph}" oninput="wcUp(this,'wc-${f.id}')"></textarea>
+            <div class="wc" id="wc-${f.id}">0 words</div>
+            <button class="polish-btn" onclick="polish('${f.id}','${sec}')">✦ Polish phrasing</button>
+            <div class="polished" id="pol-${f.id}">
+              <div class="pol-lbl">✦ Suggested phrasing</div>
+              <div id="pol-txt-${f.id}"></div>
+              <div class="pol-actions">
+                <button class="btn btn-outline btn-sm" onclick="usePolish('${f.id}')">Use This</button>
+                <button class="btn btn-outline btn-sm" onclick="hidePolish('${f.id}')">Keep Mine</button>
+              </div>
+            </div>
+          </div>`).join('')}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function wcUp(el, id) {
+  const n = el.value.trim().split(/\s+/).filter(w=>w).length;
+  const wcel = document.getElementById(id);
+  if (wcel) wcel.textContent = `${n} word${n!==1?'s':''}`;
+}
+
+// ══════════════════════════════
+// POLISH
+// ══════════════════════════════
+async function polish(fid, sec) {
+  const raw = document.getElementById(`f-${fid}`)?.value?.trim();
+  if (!raw || raw.length < 8) { alert('Write something first, then hit Polish.'); return; }
+
+  const polBox = document.getElementById(`pol-${fid}`);
+  const polTxt = document.getElementById(`pol-txt-${fid}`);
+  const btn    = document.querySelector(`[onclick="polish('${fid}','${sec}')"]`);
+
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spin"></span> Polishing…';
+
+  const secCtx = {intro:'the introduction',for:'a "For / Benefits" paragraph',against:'an "Against / Drawbacks" paragraph',conc:'the conclusion'};
+
+  try {
+    const res  = await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:250,messages:[{role:'user',content:`You are an O-Level English writing coach for Singapore secondary students.
+
+The student is writing ${secCtx[sec]} on: "${activeQ?.text}"
+
+Their rough note: "${raw}"
+
+Rules:
+- Keep ALL their ideas — do not add new content
+- Improve vocabulary, sentence structure, and formal register only
+- O-Level appropriate language — not overly academic
+- Maximum 3–4 sentences
+- Return ONLY the polished text, nothing else`}]})});
+    const data = await res.json();
+    const out  = data.content?.map(b=>b.text||'').join('').trim();
+    polTxt.textContent = out;
+    polBox.classList.add('show');
+  } catch(e) {
+    alert('Could not connect. Check your internet and try again.');
+  }
+  btn.disabled = false;
+  btn.innerHTML = '✦ Polish phrasing';
+}
+
+function usePolish(fid) {
+  const txt = document.getElementById(`pol-txt-${fid}`)?.textContent;
+  if (txt) { const el = document.getElementById(`f-${fid}`); el.value = txt; wcUp(el,`wc-${fid}`); }
+  hidePolish(fid);
+}
+function hidePolish(fid) { document.getElementById(`pol-${fid}`)?.classList.remove('show'); }
+
+
+async function exportPlan() {
+  if (!activeQ) return;
+
+  const name = window.prompt('Enter your name to submit to your teacher:');
+  if (!name || !name.trim()) { alert('Name is required to submit.'); return; }
+
+  const btn = document.querySelector('.export-btn');
+  const origLabel = btn.innerHTML;
+  btn.innerHTML = '⏳ Submitting…';
+  btn.disabled = true;
+
+  const get = id => document.getElementById(`f-${id}`)?.value?.trim() || '';
+
+  const payload = {
+    type:        'plan',
+    studentName:  name.trim(),
+    question:     activeQ.text,
+    qType:        TYPE_LABELS[activeQ.type] || activeQ.type,
+    timestamp:    new Date().toLocaleString('en-SG', { timeZone: 'Asia/Singapore' }),
+    hook:   get('hook'),   define: get('define'), stance: get('stance'),
+    forP:   get('for-p'),  forE:   get('for-e'),  forEl:  get('for-el'),
+    agP:    get('ag-p'),   agE:    get('ag-e'),   agEl:   get('ag-el'),
+    cBal:   get('c-bal'),  cFin:   get('c-fin'),  cClin:  get('c-clin'),
+  };
+
+  try {
+    await fetch(SCRIPT_URL, {
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    btn.innerHTML = '✓ Submitted!';
+    setTimeout(() => { btn.innerHTML = '✉ Submit to Teacher'; btn.disabled = false; }, 3000);
+  } catch(err) {
+    btn.disabled = false;
+    btn.innerHTML = origLabel;
+    alert('Submission failed. Check your internet connection.');
+  }
+}
+
+// ══════════════════════════════
+// EXPORT AS PPT
+// ══════════════════════════════
+function exportPPT() {
+  if (!activeQ) return;
+  const get = id => document.getElementById(`f-${id}`)?.value?.trim() || '(not filled in)';
+
+  // Colour palette — warm editorial
+  const INK    = '1A1714';
+  const RED    = 'B83228';
+  const GREEN  = '1D6645';
+  const BLUE   = '2A4B8A';
+  const GOLD   = 'A07820';
+  const WHITE  = 'FFFFFF';
+  const CREAM  = 'FAF8F3';
+  const MUTED  = '8C8070';
+
+  const sectionColors = {
+    intro:   BLUE,
+    for:     GREEN,
+    against: RED,
+    conc:    GOLD,
+  };
+
+  const pres = new PptxGenJS();
+  pres.layout  = 'LAYOUT_16x9';
+  pres.title   = 'Essay Plan — O-Level English';
+  pres.subject = activeQ.text;
+
+  // helper: wrap long text for slide display
+  const wrap = (str, max = 180) => str.length > max ? str.substring(0, max) + '…' : str;
+
+  // ── SLIDE 1: COVER ──────────────────────────────────────
+  const cover = pres.addSlide();
+  cover.background = { color: INK };
+
+  // left accent bar
+  cover.addShape(pres.ShapeType.rect, {
+    x: 0, y: 0, w: 0.18, h: 5.625,
+    fill: { color: RED }, line: { color: RED }
+  });
+
+  cover.addText('O-LEVEL ENGLISH', {
+    x: 0.4, y: 0.8, w: 9.2, h: 0.4,
+    fontSize: 11, fontFace: 'Calibri', color: MUTED,
+    bold: false, charSpacing: 4, margin: 0
+  });
+
+  cover.addText('Essay\nResponse Plan', {
+    x: 0.4, y: 1.3, w: 9.2, h: 1.8,
+    fontSize: 44, fontFace: 'Georgia', color: WHITE,
+    bold: true, margin: 0
+  });
+
+  // question box
+  cover.addShape(pres.ShapeType.rect, {
+    x: 0.4, y: 3.2, w: 9.2, h: 1.6,
+    fill: { color: WHITE, transparency: 90 },
+    line: { color: WHITE, transparency: 70, width: 1 }
+  });
+
+  cover.addText([
+    { text: 'QUESTION  ', options: { bold: true, color: RED, fontSize: 9, charSpacing: 2 } },
+    { text: '\n' + wrap(activeQ.text, 200), options: { color: WHITE, fontSize: 13, italic: true } }
+  ], {
+    x: 0.6, y: 3.3, w: 8.8, h: 1.4,
+    fontFace: 'Calibri', valign: 'top', margin: 8
+  });
+
+  cover.addText([
+    { text: (TYPE_LABELS[activeQ.type] || activeQ.type).toUpperCase(), options: { color: GOLD, fontSize: 9, charSpacing: 2 } }
+  ], {
+    x: 0.4, y: 5.15, w: 9.2, h: 0.3,
+    fontFace: 'Calibri', margin: 0
+  });
+
+  // ── SLIDE 2: INTRODUCTION ────────────────────────────────
+  addContentSlide(pres, {
+    accentColor: BLUE,
+    sectionLabel: 'INTRODUCTION',
+    sectionLetter: 'I',
+    fields: [
+      { label: 'Hook / Opening Line',  value: get('hook') },
+      { label: 'Define Key Terms',     value: get('define') },
+      { label: 'Thesis / Stance',      value: get('stance') },
+    ]
+  });
+
+  // ── SLIDE 3: FOR ─────────────────────────────────────────
+  addContentSlide(pres, {
+    accentColor: GREEN,
+    sectionLabel: 'FOR / BENEFITS',
+    sectionLetter: 'F',
+    fields: [
+      { label: 'Point',                value: get('for-p') },
+      { label: 'Evidence / Example',   value: get('for-e') },
+      { label: 'Elaboration',          value: get('for-el') },
+    ]
+  });
+
+  // ── SLIDE 4: AGAINST ─────────────────────────────────────
+  addContentSlide(pres, {
+    accentColor: RED,
+    sectionLabel: 'AGAINST / DRAWBACKS',
+    sectionLetter: 'A',
+    fields: [
+      { label: 'Counter-Point',        value: get('ag-p') },
+      { label: 'Evidence / Example',   value: get('ag-e') },
+      { label: 'Elaboration',          value: get('ag-el') },
+    ]
+  });
+
+  // ── SLIDE 5: CONCLUSION ──────────────────────────────────
+  addContentSlide(pres, {
+    accentColor: GOLD,
+    sectionLabel: 'CONCLUSION',
+    sectionLetter: 'C',
+    fields: [
+      { label: 'Acknowledge Complexity',       value: get('c-bal') },
+      { label: 'Final Stance + Call to Action', value: get('c-fin') },
+      { label: 'Closing Line / Clincher',       value: get('c-clin') },
+    ]
+  });
+
+  // ── SLIDE 6: REMINDER ────────────────────────────────────
+  const remind = pres.addSlide();
+  remind.background = { color: CREAM };
+
+  remind.addShape(pres.ShapeType.rect, {
+    x: 0, y: 0, w: 0.18, h: 5.625,
+    fill: { color: INK }, line: { color: INK }
+  });
+
+  remind.addText('BEFORE YOU WRITE', {
+    x: 0.4, y: 0.5, w: 9.2, h: 0.5,
+    fontSize: 10, fontFace: 'Calibri', color: MUTED,
+    charSpacing: 3, margin: 0
+  });
+
+  remind.addText('This plan is your guide,\nnot your essay.', {
+    x: 0.4, y: 1.05, w: 9.2, h: 1.2,
+    fontSize: 30, fontFace: 'Georgia', color: INK,
+    bold: true, margin: 0
+  });
+
+  const tips = [
+    'Expand each point into full paragraphs when you write.',
+    'Use your Evidence to build at least 2–3 sentences of elaboration.',
+    'Your Clincher should echo your Hook — tie the essay into a circle.',
+    'For Discursive essays: give both sides equal weight.',
+    'For Argumentative essays: your stand must be clear from the first paragraph.',
+  ];
+
+  remind.addText(tips.map((t, i) => ({
+    text: `${i + 1}.  ${t}`,
+    options: { bullet: false, breakLine: i < tips.length - 1, paraSpaceAfter: 6 }
+  })), {
+    x: 0.4, y: 2.4, w: 9.2, h: 2.8,
+    fontSize: 13, fontFace: 'Calibri', color: INK,
+    valign: 'top', margin: 0
+  });
+
+  // download
+  pres.writeFile({ fileName: `Essay-Plan-${activeQ.id}.pptx` });
+}
+
+// ── SHARED SLIDE BUILDER ─────────────────────────────────
+function addContentSlide(pres, { accentColor, sectionLabel, sectionLetter, fields }) {
+  const WHITE = 'FFFFFF';
+  const INK   = '1A1714';
+  const CREAM = 'FAF8F3';
+  const MUTED = '8C8070';
+
+  const slide = pres.addSlide();
+  slide.background = { color: WHITE };
+
+  // top accent bar
+  slide.addShape(pres.ShapeType.rect, {
+    x: 0, y: 0, w: 10, h: 0.55,
+    fill: { color: accentColor }, line: { color: accentColor }
+  });
+
+  // section letter circle
+  slide.addShape(pres.ShapeType.ellipse, {
+    x: 0.3, y: 0.08, w: 0.38, h: 0.38,
+    fill: { color: WHITE, transparency: 30 },
+    line: { color: WHITE, width: 1 }
+  });
+  slide.addText(sectionLetter, {
+    x: 0.3, y: 0.06, w: 0.38, h: 0.4,
+    fontSize: 16, fontFace: 'Georgia', color: WHITE,
+    bold: true, align: 'center', valign: 'middle', margin: 0
+  });
+
+  // section label
+  slide.addText(sectionLabel, {
+    x: 0.78, y: 0.1, w: 8.8, h: 0.35,
+    fontSize: 11, fontFace: 'Calibri', color: WHITE,
+    bold: true, charSpacing: 2, valign: 'middle', margin: 0
+  });
+
+  // three content boxes
+  const boxH  = 1.42;
+  const boxY  = [0.72, 2.22, 3.72];
+  const labelColors = [accentColor, accentColor, accentColor];
+
+  fields.forEach((f, i) => {
+    const y = boxY[i];
+
+    // box background
+    slide.addShape(pres.ShapeType.rect, {
+      x: 0.3, y, w: 9.4, h: boxH,
+      fill: { color: i % 2 === 0 ? CREAM : WHITE },
+      line: { color: 'D9D0C2', width: 0.5 }
+    });
+
+    // left accent
+    slide.addShape(pres.ShapeType.rect, {
+      x: 0.3, y, w: 0.06, h: boxH,
+      fill: { color: accentColor }, line: { color: accentColor }
+    });
+
+    // field label
+    slide.addText(f.label.toUpperCase(), {
+      x: 0.48, y: y + 0.1, w: 9.0, h: 0.22,
+      fontSize: 8, fontFace: 'Calibri', color: accentColor,
+      bold: true, charSpacing: 1.5, margin: 0
+    });
+
+    // field value
+    slide.addText(wrap(f.value, 260), {
+      x: 0.48, y: y + 0.35, w: 9.0, h: boxH - 0.42,
+      fontSize: 13, fontFace: 'Calibri', color: INK,
+      valign: 'top', margin: 0, wrap: true
+    });
+  });
+}
+
+function wrap(str, max = 260) {
+  if (!str || str === '(not filled in)') return str || '(not filled in)';
+  return str.length > max ? str.substring(0, max) + '…' : str;
+}
+
+// ══════════════════════════════
+// SUGGEST QUESTION
+// ══════════════════════════════
+async function suggestQ() {
+  const q = document.getElementById('suggestInput').value.trim();
+  if (!q) return;
+  try {
+    await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'suggestion',question:q,timestamp:new Date().toLocaleString('en-SG',{timeZone:'Asia/Singapore'})})});
+  } catch(_){}
+  document.getElementById('suggestStatus').style.display='inline';
+  document.getElementById('suggestInput').value='';
+  setTimeout(()=>{document.getElementById('suggestStatus').style.display='none'},4000);
+}
+
+// ══════════════════════════════
+// FILE UPLOAD
+// ══════════════════════════════
+function dOver(e){e.preventDefault();document.getElementById('uploadZone').classList.add('over')}
+function dLeave(){document.getElementById('uploadZone').classList.remove('over')}
+function dDrop(e){e.preventDefault();dLeave();const f=e.dataTransfer.files[0];if(f)setFile(f)}
+function setFile(f){
+  upFile=f;
+  document.getElementById('fpName').textContent=f.name;
+  document.getElementById('fpMeta').textContent=`${(f.size/1024).toFixed(1)} KB · ${f.type||'file'}`;
+  document.getElementById('filePrev').classList.add('show');
+  document.getElementById('uploadZone').style.display='none';
+}
+function rmFile(){
+  upFile=null;
+  document.getElementById('filePrev').classList.remove('show');
+  document.getElementById('uploadZone').style.display='';
+  document.getElementById('fileIn').value='';
+}
+
+async function submitEssay(){
+  const name=document.getElementById('uName').value.trim();
+  const qn  =document.getElementById('uQ').value.trim();
+  const st  =document.getElementById('subStatus');
+  st.className='status';
+  if(!name){st.className='status err';st.textContent='Please enter your name.';return}
+  if(!upFile){st.className='status err';st.textContent='Please upload your essay file.';return}
+  if(upFile.size>10*1024*1024){st.className='status err';st.textContent='File too large (max 10MB).';return}
+  const btn=document.getElementById('subBtn');
+  btn.disabled=true;btn.innerHTML='<span class="spin"></span> Uploading…';
+  const reader=new FileReader();
+  reader.onload=async e=>{
+    try{
+      await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'essay',studentName:name,question:qn,fileName:upFile.name,fileData:e.target.result.split(',')[1],mimeType:upFile.type,timestamp:new Date().toLocaleString('en-SG',{timeZone:'Asia/Singapore'})})});
+      btn.textContent='Submitted ✓';
+      st.className='status ok';
+      st.innerHTML=`<strong>Submitted!</strong> Your teacher has been notified, ${name}. Well done for writing a full essay!`;
+    }catch(_){
+      btn.disabled=false;btn.textContent='Submit Essay to Teacher';
+      st.className='status err';st.textContent='Submission failed. Check your connection and try again.';
+    }
+  };
+  reader.readAsDataURL(upFile);
+}
+</script>
+</body>
+</html>
